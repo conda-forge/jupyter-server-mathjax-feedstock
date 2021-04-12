@@ -1,5 +1,5 @@
 {% set name = "jupyter_server_mathjax" %}
-{% set version = "0.2.0" %}
+{% set version = "0.2.2" %}
 
 package:
   name: {{ name|lower|replace("_", "-") }}
@@ -7,18 +7,19 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 61d6842b3cc2f019826f43f3bbda8ce76963d4798e4f5c75b269718abded2402
+  sha256: 0f75fc1ed6fc3a6d94ea9c87932cfd7a43b8c11721b7c3f01281116469280011
 
 build:
   noarch: python
   number: 0
-  script: '{{ PYTHON }} -m pip install . --install-option="--skip-npm" -vv'
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - python >=3.6
-    - pip
     - jupyter-packaging >=0.7.9
+    - nodejs
+    - pip
   run:
     - python >=3.6
     - jupyter_server >=1.1,<2
@@ -37,7 +38,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
-  summary: 'MathJax resources as a Jupyter Server Extension.'
+  summary: MathJax resources as a Jupyter Server Extension.
 
 extra:
   recipe-maintainers:
