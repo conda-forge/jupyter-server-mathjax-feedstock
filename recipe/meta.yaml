@@ -1,5 +1,5 @@
 {% set name = "jupyter_server_mathjax" %}
-{% set version = "0.2.2" %}
+{% set version = "0.2.3" %}
 
 package:
   name: {{ name|lower|replace("_", "-") }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 0f75fc1ed6fc3a6d94ea9c87932cfd7a43b8c11721b7c3f01281116469280011
+  sha256: 564e8d1272019c6771208f577b5f9f2b3afb02b9e2bff3b34c042cef8ed84451
 
 build:
   noarch: python
